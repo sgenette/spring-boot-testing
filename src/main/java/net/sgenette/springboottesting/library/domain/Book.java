@@ -8,7 +8,7 @@ import lombok.NonNull;
 @Getter
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Book {
+public final class Book {
 
     @NonNull private final Long isbn;
     @NonNull private final String title;

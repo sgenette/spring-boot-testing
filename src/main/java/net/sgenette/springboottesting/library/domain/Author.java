@@ -8,7 +8,7 @@ import lombok.NonNull;
 @Getter
 @AllArgsConstructor
 @EqualsAndHashCode
-public class Author {
+public final class Author {
 
     @NonNull private final String firstName;
     @NonNull private final String lastName;

@@ -1,5 +1,6 @@
 package net.sgenette.springboottesting.library.domain;
 
+import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,17 +22,8 @@ public class AuthorTest {
     }
 
     @Test
-    public void sameAuthorIsValid() {
-        String firstName = "Kent";
-        String lastName = "Beck";
-
-        Author actualAuthor = new Author(firstName, lastName);
-        Author sameActualAuthor = new Author(firstName, lastName);
-
-        assertAll(
-                () -> assertThat(actualAuthor).isNotNull(),
-                () -> assertThat(sameActualAuthor).isNotNull(),
-                () -> assertThat(actualAuthor).isEqualTo(sameActualAuthor));
+    public void equalsHashCode() {
+        EqualsVerifier.forClass(Author.class).verify();
     }
 
 }

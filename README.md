@@ -6,3 +6,4 @@ Inspiration from:
 * https://spring.io/guides/gs/testing-web
 * https://spring.io/guides/gs/accessing-data-jpa
 * https://www.baeldung.com/java-mutation-testing-with-pitest
+* https://jqno.nl/equalsverifier
