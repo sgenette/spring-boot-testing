@@ -16,6 +16,8 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <pitest.version>1.5.0</pitest.version>
+        <pitest-junit5-plugin.version>0.12</pitest-junit5-plugin.version>
     </properties>
 
     <dependencies>
@@ -59,6 +61,18 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>${pitest.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.pitest</groupId>
+                        <artifactId>pitest-junit5-plugin</artifactId>
+                        <version>${pitest-junit5-plugin.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>

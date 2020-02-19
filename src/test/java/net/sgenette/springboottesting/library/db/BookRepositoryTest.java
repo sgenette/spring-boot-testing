@@ -45,12 +45,8 @@ public class BookRepositoryTest {
                 build();
 
         bookRepository.save(book);
-        Optional<Book> actualBook = bookRepository.findById(4L);
 
-        assertAll(
-                () -> assertThat(bookRepository.count()).isEqualTo(4L),
-                () -> assertThat(actualBook).isPresent().hasValue(book)
-        );
+        assertThat(bookRepository.count()).isEqualTo(4L);
     }
 
 }
