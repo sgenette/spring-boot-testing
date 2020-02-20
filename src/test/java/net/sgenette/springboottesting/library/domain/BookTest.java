@@ -1,6 +1,5 @@
 package net.sgenette.springboottesting.library.domain;
 
-import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,11 +20,6 @@ public class BookTest {
                 () -> assertThat(actualBook.getIsbn()).isEqualTo(isbn),
                 () -> assertThat(actualBook.getTitle()).isEqualTo(title),
                 () -> assertThat(actualBook.getAuthor()).isEqualTo(author));
-    }
-
-    @Test
-    public void equalsHashCode() {
-        EqualsVerifier.forClass(Book.class).verify();
     }
 
 }
