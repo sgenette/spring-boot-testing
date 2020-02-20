@@ -10,7 +10,7 @@ import lombok.NonNull;
 @EqualsAndHashCode
 public final class Book {
 
-    @NonNull private final Long isbn;
+    @NonNull private final Isbn13 isbn13;
     @NonNull private final String title;
     @NonNull private final Author author;
 }
