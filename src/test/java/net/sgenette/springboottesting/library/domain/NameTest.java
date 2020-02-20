@@ -2,60 +2,46 @@ package net.sgenette.springboottesting.library.domain;
 
 import org.junit.jupiter.api.Test;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
-import java.util.Set;
-
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 
 public class NameTest {
 
-    private Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
-
     @Test
-    public void name_shouldBeValid() {
-        Name name = new Name("Robert");
+    public void name_shouldBeOk() {
+        String name = "Robert";
 
-        Set<ConstraintViolation<Name>> violations = validator.validate(name);
+        Name actualName = new Name(name);
 
-        assertThat(violations).isEmpty();
+        assertThat(actualName.getName()).isEqualTo(name);
     }
 
     @Test
-    public void nameWithLengthOver30_shouldNotBeValid() {
-        Name name = new Name("A very long name that exceeds the maximum length");
+    public void nameWithLengthOver30_shouldThrowIllegalArgumentException() {
+        String name = "A very long name that exceeds the maximum length";
 
-        Set<ConstraintViolation<Name>> violations = validator.validate(name);
-
-        assertThat(violations).hasSize(1);
+        assertThatIllegalArgumentException().isThrownBy(() -> new Name(name));
     }
 
     @Test
-    public void nameWithDigit_shouldNotBeValid() {
-        Name name = new Name("Martin1");
+    public void nameWithDigit_shouldThrowIllegalArgumentException() {
+        String name = "Martin1";
 
-        Set<ConstraintViolation<Name>> violations = validator.validate(name);
-
-        assertThat(violations).hasSize(1);
+        assertThatIllegalArgumentException().isThrownBy(() -> new Name(name));
     }
 
     @Test
-    public void emptyName_shouldNotBeValid() {
-        Name name = new Name("");
+    public void emptyName_shouldThrowIllegalArgumentException() {
+        String name = "";
 
-        Set<ConstraintViolation<Name>> violations = validator.validate(name);
-
-        assertThat(violations).hasSize(1);
+        assertThatIllegalArgumentException().isThrownBy(() -> new Name(name));
     }
 
     @Test
-    public void nullName_shouldNotBeValid() {
-        Name name = new Name(null);
+    public void nullName_shouldThrowIllegalArgumentException() {
+        String name = null;
 
-        Set<ConstraintViolation<Name>> violations = validator.validate(name);
-
-        assertThat(violations).hasSize(1);
+        assertThatIllegalArgumentException().isThrownBy(() -> new Name(name));
     }
 
 }

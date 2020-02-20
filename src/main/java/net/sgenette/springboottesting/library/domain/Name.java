@@ -1,18 +1,24 @@
 package net.sgenette.springboottesting.library.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import lombok.NonNull;
+import org.apache.commons.validator.routines.RegexValidator;
 
 @Getter
-@AllArgsConstructor
 @EqualsAndHashCode
 final class Name {
 
-    @NotNull
-    @Pattern(regexp = "^[A-Za-z]{1,30}$")
-    final private String name;
+    @NonNull private final String name;
+
+    public Name(String name) {
+        boolean validName = new RegexValidator("^[A-Za-z]{1,30}$").isValid(name);
+
+        if (validName) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Invalid name");
+        }
+    }
+
 }
