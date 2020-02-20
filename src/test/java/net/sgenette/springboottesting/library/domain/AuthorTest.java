@@ -9,8 +9,8 @@ public class AuthorTest {
 
     @Test
     public void newAuthorIsValid() {
-        String firstName = "Robert";
-        String lastName = "Martin";
+        Name firstName = new Name("Robert");
+        Name lastName = new Name("Martin");
 
         Author actualAuthor = new Author(firstName, lastName);
 
@@ -19,5 +19,7 @@ public class AuthorTest {
                 () -> assertThat(actualAuthor.getFirstName()).isEqualTo(firstName),
                 () -> assertThat(actualAuthor.getLastName()).isEqualTo(lastName));
     }
+
+
 
 }

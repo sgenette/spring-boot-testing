@@ -11,7 +11,7 @@ public class BookTest {
     public void newBookIsValid() {
         Long isbn = 9780132350884L;
         String title = "Clean code";
-        Author author = new Author("Robert", "Martin");
+        Author author = new Author(new Name("Robert"), new Name("Martin"));
 
         Book actualBook = new Book(isbn, title, author);
 
