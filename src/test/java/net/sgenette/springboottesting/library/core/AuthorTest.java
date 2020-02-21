@@ -1,4 +1,4 @@
-package net.sgenette.springboottesting.library.domain;
+package net.sgenette.springboottesting.library.core;
 
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +19,5 @@ public class AuthorTest {
                 () -> assertThat(actualAuthor.getFirstName()).isEqualTo(firstName),
                 () -> assertThat(actualAuthor.getLastName()).isEqualTo(lastName));
     }
-
-
 
 }

@@ -1,4 +1,4 @@
-package net.sgenette.springboottesting.library.domain;
+package net.sgenette.springboottesting.library.core;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

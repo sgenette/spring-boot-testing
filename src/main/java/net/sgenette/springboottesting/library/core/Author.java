@@ -1,10 +1,9 @@
-package net.sgenette.springboottesting.library.domain;
+package net.sgenette.springboottesting.library.core;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NonNull;
-
 
 @Getter
 @AllArgsConstructor
