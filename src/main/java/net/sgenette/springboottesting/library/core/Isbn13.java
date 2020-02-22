@@ -7,7 +7,7 @@ import org.apache.commons.validator.routines.ISBNValidator;
 import java.util.Optional;
 
 @EqualsAndHashCode
-final class Isbn13 {
+public final class Isbn13 {
 
     @Getter
     private final String isbn13;

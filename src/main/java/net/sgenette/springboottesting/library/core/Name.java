@@ -7,7 +7,7 @@ import org.apache.commons.validator.routines.RegexValidator;
 
 @Getter
 @EqualsAndHashCode
-final class Name {
+public final class Name {
 
     @NonNull private final String name;
 
