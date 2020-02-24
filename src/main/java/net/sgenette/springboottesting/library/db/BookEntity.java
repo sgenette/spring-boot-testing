@@ -12,7 +12,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Data
 @Entity
-public class Book {
+@Table(name = "books")
+public class BookEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,5 +21,5 @@ public class Book {
     private Long isbn;
     private String title;
     @ManyToOne(cascade = CascadeType.ALL)
-    private Author author;
+    private AuthorEntity author;
 }

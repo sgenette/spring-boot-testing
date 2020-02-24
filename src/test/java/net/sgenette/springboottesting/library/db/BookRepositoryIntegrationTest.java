@@ -17,18 +17,18 @@ public class BookRepositoryIntegrationTest {
 
     @Test
     public void findBookById() {
-        Book book = Book.builder().id(1L).isbn(9780132350884L).title("Clean Code").
-                author(Author.builder().id(1L).firstName("Robert").lastName("Martin").build()).
+        BookEntity book = BookEntity.builder().id(1L).isbn(9780132350884L).title("Clean Code").
+                author(AuthorEntity.builder().id(1L).firstName("Robert").lastName("Martin").build()).
                 build();
 
-        Optional<Book> actualBook = bookRepository.findById(1L);
+        Optional<BookEntity> actualBook = bookRepository.findById(1L);
 
         assertThat(actualBook).isPresent().hasValue(book);
     }
 
     @Test
     public void deleteBook() {
-        Book book = Book.builder().id(1L).build();
+        BookEntity book = BookEntity.builder().id(1L).build();
 
         bookRepository.delete(book);
 
@@ -40,8 +40,8 @@ public class BookRepositoryIntegrationTest {
 
     @Test
     public void addBook() {
-        Book book = Book.builder().title("Accelerate").isbn(9781942788331L).
-                author(Author.builder().firstName("Nicole").lastName("Forsgren").build()).
+        BookEntity book = BookEntity.builder().title("Accelerate").isbn(9781942788331L).
+                author(AuthorEntity.builder().firstName("Nicole").lastName("Forsgren").build()).
                 build();
 
         bookRepository.save(book);
