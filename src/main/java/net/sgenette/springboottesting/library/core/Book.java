@@ -1,16 +1,14 @@
 package net.sgenette.springboottesting.library.core;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
+import lombok.Builder;
 import lombok.NonNull;
+import lombok.Value;
 
-@Getter
-@AllArgsConstructor
-@EqualsAndHashCode
+@Builder
+@Value
 public final class Book {
 
-    @NonNull private final Isbn13 isbn13;
-    @NonNull private final String title;
-    @NonNull private final Author author;
+    @NonNull Isbn13 isbn13;
+    @NonNull String title;
+    @NonNull Author author;
 }
