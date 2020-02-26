@@ -12,7 +12,7 @@ public class AuthorTest {
         Name firstName = new Name("Robert");
         Name lastName = new Name("Martin");
 
-        Author actualAuthor = new Author(firstName, lastName);
+        Author actualAuthor = Author.builder().firstName(firstName).lastName(lastName).build();
 
         assertAll(
                 () -> assertThat(actualAuthor).isNotNull(),

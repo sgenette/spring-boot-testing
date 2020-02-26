@@ -11,7 +11,7 @@ public class BookTest {
     public void newBookIsValid() {
         Isbn13 isbn13 = new Isbn13("978 1 86197 876 9");
         String title = "Clean code";
-        Author author = new Author(new Name("Robert"), new Name("Martin"));
+        Author author = Author.builder().firstName(new Name("Robert")).lastName(new Name("Martin")).build();
 
         Book actualBook = new Book(isbn13, title, author);
 
