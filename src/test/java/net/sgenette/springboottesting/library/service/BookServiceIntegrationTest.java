@@ -18,12 +18,8 @@ import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException
 @Transactional
 public class BookServiceIntegrationTest {
 
-    private BookService bookService;
-
     @Autowired
-    public BookServiceIntegrationTest(BookService bookService) {
-        this.bookService = bookService;
-    }
+    private BookService bookService;
 
     @Test
     public void isbnInDatabase_shouldReturnBook() {
