@@ -4,17 +4,17 @@ import net.sgenette.springboottesting.library.core.Author;
 import net.sgenette.springboottesting.library.core.Name;
 import net.sgenette.springboottesting.library.db.AuthorEntity;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
-@SpringBootTest
-public class AuthorMapperIntegrationTest {
+public class AuthorMapperTest {
 
-    @Autowired
     private AuthorMapper mapper;
+
+    public AuthorMapperTest() {
+        mapper = new AuthorMapperImpl(new NameMapper());
+    }
 
     @Test
     public void author_shouldMapToAuthorEntity() {
@@ -26,10 +26,19 @@ public class AuthorMapperIntegrationTest {
         AuthorEntity actualAuthorEntity = mapper.authorToAuthorEntity(author);
 
         assertAll(
-            () -> assertThat(actualAuthorEntity.getFirstName()).isEqualTo("Robert"),
-            () -> assertThat(actualAuthorEntity.getLastName()).isEqualTo("Martin")
+                () -> assertThat(actualAuthorEntity.getFirstName()).isEqualTo("Robert"),
+                () -> assertThat(actualAuthorEntity.getLastName()).isEqualTo("Martin")
         );
 
+    }
+
+    @Test
+    public void nullAuthor_shouldMapToNullAuthorEntity() {
+        Author author = null;
+
+        AuthorEntity actualAuthorEntity = mapper.authorToAuthorEntity(author);
+
+        assertThat(actualAuthorEntity).isNull();
     }
 
     @Test
@@ -43,9 +52,18 @@ public class AuthorMapperIntegrationTest {
         Author author = mapper.authorEntityToAuthor(authorEntity);
 
         assertAll(
-            () -> assertThat(author.getFirstName().getName()).isEqualTo("Robert"),
-            () -> assertThat(author.getLastName().getName()).isEqualTo("Martin")
+                () -> assertThat(author.getFirstName().getName()).isEqualTo("Robert"),
+                () -> assertThat(author.getLastName().getName()).isEqualTo("Martin")
         );
+    }
+
+    @Test
+    public void nullAuthorEntity_shouldMapToNullAuthor() {
+        AuthorEntity authorEntity = null;
+
+        Author author = mapper.authorEntityToAuthor(authorEntity);
+
+        assertThat(author).isNull();
     }
 
 }

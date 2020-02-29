@@ -7,17 +7,17 @@ import net.sgenette.springboottesting.library.core.Name;
 import net.sgenette.springboottesting.library.db.AuthorEntity;
 import net.sgenette.springboottesting.library.db.BookEntity;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
-@SpringBootTest
-public class BookMapperIntegrationTest {
+public class BookMapperTest {
 
-    @Autowired
     private BookMapper mapper;
+
+    public BookMapperTest() {
+        this.mapper = new BookMapperImpl(new NameMapper(), new Isbn13Mapper());
+    }
 
     @Test
     public void book_shouldMapToBookEntity() {
@@ -43,6 +43,15 @@ public class BookMapperIntegrationTest {
                 () -> assertThat(actualBookEntity.getAuthor().getLastName()).
                         isEqualTo(book.getAuthor().getLastName().getName())
         );
+    }
+
+    @Test
+    public void nullBook_shouldMapToNullBookEntity() {
+        Book book = null;
+
+        BookEntity actualBookEntity = mapper.bookToBookEntity(book);
+
+        assertThat(actualBookEntity).isNull();
     }
 
     @Test
@@ -73,4 +82,12 @@ public class BookMapperIntegrationTest {
         );
     }
 
+    @Test
+    public void nullBookEntity_shouldMapToNullBook() {
+        BookEntity bookEntity = null;
+
+        Book actualBook = mapper.bookEntityToBook(bookEntity);
+
+        assertThat(actualBook).isNull();
+    }
 }
