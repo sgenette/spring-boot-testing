@@ -1,9 +1,9 @@
 package net.sgenette.springboottesting.library.service;
 
-import net.sgenette.springboottesting.library.core.Author;
-import net.sgenette.springboottesting.library.core.Book;
-import net.sgenette.springboottesting.library.core.Isbn13;
-import net.sgenette.springboottesting.library.core.Name;
+import net.sgenette.springboottesting.library.model.Author;
+import net.sgenette.springboottesting.library.model.Book;
+import net.sgenette.springboottesting.library.model.Isbn13;
+import net.sgenette.springboottesting.library.model.Name;
 import net.sgenette.springboottesting.library.db.AuthorEntity;
 import net.sgenette.springboottesting.library.db.BookEntity;
 import net.sgenette.springboottesting.library.db.BookRepository;

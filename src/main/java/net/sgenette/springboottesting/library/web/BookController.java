@@ -1,6 +1,6 @@
 package net.sgenette.springboottesting.library.web;
 
-import net.sgenette.springboottesting.library.core.Book;
+import net.sgenette.springboottesting.library.model.Book;
 import net.sgenette.springboottesting.library.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

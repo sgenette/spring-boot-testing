@@ -1,7 +1,7 @@
 package net.sgenette.springboottesting.library.mapper;
 
-import net.sgenette.springboottesting.library.core.Author;
-import net.sgenette.springboottesting.library.core.Name;
+import net.sgenette.springboottesting.library.model.Author;
+import net.sgenette.springboottesting.library.model.Name;
 import net.sgenette.springboottesting.library.db.AuthorEntity;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package net.sgenette.springboottesting.library.core;
+package net.sgenette.springboottesting.library.model;
 
 import lombok.Builder;
 import lombok.NonNull;
