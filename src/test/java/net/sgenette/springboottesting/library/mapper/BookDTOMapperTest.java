@@ -24,4 +24,11 @@ public class BookDTOMapperTest {
         assertThat(actualBookDTO.getAuthor().getFirstName()).isEqualTo("Robert");
         assertThat(actualBookDTO.getAuthor().getLastName()).isEqualTo("Martin");
     }
+
+    @Test
+    public void nullBook_shouldMapToNullBookDTO() {
+        BookDTO actualBookDTO = mapper.bookToBookDTO(null);
+
+        assertThat(actualBookDTO).isNull();
+    }
 }

@@ -22,4 +22,11 @@ public class AuthorDTOMapperTest {
         assertThat(actualAuthorDTO.getFirstName()).isEqualTo("Martin");
         assertThat(actualAuthorDTO.getLastName()).isEqualTo("Fowler");
     }
+
+    @Test
+    public void nullAuthor_shouldMapToNullAuthorDTO() {
+        AuthorDTO actualAuthorDTO = mapper.authorToAuthorDTO(null);
+
+        assertThat(actualAuthorDTO).isNull();
+    }
 }
