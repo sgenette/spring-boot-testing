@@ -1,7 +1,7 @@
 package net.sgenette.springboottesting.library.db.data;
 
-import net.sgenette.springboottesting.library.db.AuthorEntity;
-import net.sgenette.springboottesting.library.db.BookEntity;
+import net.sgenette.springboottesting.library.db.entity.AuthorEntity;
+import net.sgenette.springboottesting.library.db.entity.BookEntity;
 
 public final class BookEntityData {
 

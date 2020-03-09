@@ -1,7 +1,7 @@
-package net.sgenette.springboottesting.library.service;
+package net.sgenette.springboottesting.library.core.service;
 
-import net.sgenette.springboottesting.library.model.Book;
-import net.sgenette.springboottesting.library.model.Isbn13;
+import net.sgenette.springboottesting.library.core.model.Book;
+import net.sgenette.springboottesting.library.core.model.Isbn13;
 
 import java.util.List;
 import java.util.Optional;

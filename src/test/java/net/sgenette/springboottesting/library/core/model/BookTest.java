@@ -1,4 +1,4 @@
-package net.sgenette.springboottesting.library.model;
+package net.sgenette.springboottesting.library.core.model;
 
 import org.junit.jupiter.api.Test;
 

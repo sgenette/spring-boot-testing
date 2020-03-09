@@ -3,7 +3,7 @@ package net.sgenette.springboottesting.library.mapper;
 import net.sgenette.springboottesting.library.web.dto.AuthorDTO;
 import org.junit.jupiter.api.Test;
 
-import static net.sgenette.springboottesting.library.model.data.AuthorData.MARTIN_FOWLER;
+import static net.sgenette.springboottesting.library.core.model.data.AuthorData.MARTIN_FOWLER;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 

@@ -1,8 +1,8 @@
 package net.sgenette.springboottesting.library.mapper;
 
-import net.sgenette.springboottesting.library.model.Author;
-import net.sgenette.springboottesting.library.model.Name;
-import net.sgenette.springboottesting.library.db.AuthorEntity;
+import net.sgenette.springboottesting.library.core.model.Author;
+import net.sgenette.springboottesting.library.core.model.Name;
+import net.sgenette.springboottesting.library.db.entity.AuthorEntity;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

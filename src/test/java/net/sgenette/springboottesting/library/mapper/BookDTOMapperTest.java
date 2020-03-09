@@ -3,7 +3,7 @@ package net.sgenette.springboottesting.library.mapper;
 import net.sgenette.springboottesting.library.web.dto.BookDTO;
 import org.junit.jupiter.api.Test;
 
-import static net.sgenette.springboottesting.library.model.data.BookData.CLEAN_CODE;
+import static net.sgenette.springboottesting.library.core.model.data.BookData.CLEAN_CODE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 

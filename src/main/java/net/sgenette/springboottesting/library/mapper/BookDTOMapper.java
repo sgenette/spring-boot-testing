@@ -1,6 +1,6 @@
 package net.sgenette.springboottesting.library.mapper;
 
-import net.sgenette.springboottesting.library.model.Book;
+import net.sgenette.springboottesting.library.core.model.Book;
 import net.sgenette.springboottesting.library.web.dto.BookDTO;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;

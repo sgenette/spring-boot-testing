@@ -1,9 +1,9 @@
 package net.sgenette.springboottesting.library.mapper;
 
-import net.sgenette.springboottesting.library.db.BookEntity;
+import net.sgenette.springboottesting.library.db.entity.BookEntity;
 import net.sgenette.springboottesting.library.db.data.BookEntityData;
-import net.sgenette.springboottesting.library.model.Book;
-import net.sgenette.springboottesting.library.model.data.BookData;
+import net.sgenette.springboottesting.library.core.model.Book;
+import net.sgenette.springboottesting.library.core.model.data.BookData;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

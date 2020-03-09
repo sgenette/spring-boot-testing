@@ -1,7 +1,7 @@
 package net.sgenette.springboottesting.library.mapper;
 
-import net.sgenette.springboottesting.library.model.Author;
-import net.sgenette.springboottesting.library.db.AuthorEntity;
+import net.sgenette.springboottesting.library.core.model.Author;
+import net.sgenette.springboottesting.library.db.entity.AuthorEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;

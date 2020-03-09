@@ -1,9 +1,9 @@
-package net.sgenette.springboottesting.library.service;
+package net.sgenette.springboottesting.library.core.service;
 
-import net.sgenette.springboottesting.library.model.Book;
-import net.sgenette.springboottesting.library.model.Isbn13;
-import net.sgenette.springboottesting.library.db.BookEntity;
-import net.sgenette.springboottesting.library.db.BookRepository;
+import net.sgenette.springboottesting.library.core.model.Book;
+import net.sgenette.springboottesting.library.core.model.Isbn13;
+import net.sgenette.springboottesting.library.db.entity.BookEntity;
+import net.sgenette.springboottesting.library.db.repository.BookRepository;
 import net.sgenette.springboottesting.library.mapper.BookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

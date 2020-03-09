@@ -1,7 +1,7 @@
 package net.sgenette.springboottesting.library.mapper;
 
-import net.sgenette.springboottesting.library.model.Book;
-import net.sgenette.springboottesting.library.db.BookEntity;
+import net.sgenette.springboottesting.library.core.model.Book;
+import net.sgenette.springboottesting.library.db.entity.BookEntity;
 import org.mapstruct.*;
 
 @Mapper(

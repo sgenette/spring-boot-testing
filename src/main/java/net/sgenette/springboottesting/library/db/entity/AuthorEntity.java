@@ -1,4 +1,4 @@
-package net.sgenette.springboottesting.library.db;
+package net.sgenette.springboottesting.library.db.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,6 +1,6 @@
 package net.sgenette.springboottesting.library.mapper;
 
-import net.sgenette.springboottesting.library.model.Isbn13;
+import net.sgenette.springboottesting.library.core.model.Isbn13;
 import org.springframework.stereotype.Component;
 
 @Component

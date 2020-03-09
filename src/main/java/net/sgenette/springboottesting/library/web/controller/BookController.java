@@ -1,7 +1,7 @@
-package net.sgenette.springboottesting.library.web;
+package net.sgenette.springboottesting.library.web.controller;
 
 import net.sgenette.springboottesting.library.mapper.BookDTOMapper;
-import net.sgenette.springboottesting.library.service.BookService;
+import net.sgenette.springboottesting.library.core.service.BookService;
 import net.sgenette.springboottesting.library.web.dto.BookDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

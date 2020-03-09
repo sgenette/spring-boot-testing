@@ -1,9 +1,9 @@
-package net.sgenette.springboottesting.library.service;
+package net.sgenette.springboottesting.library.core.service;
 
-import net.sgenette.springboottesting.library.model.Author;
-import net.sgenette.springboottesting.library.model.Book;
-import net.sgenette.springboottesting.library.model.Isbn13;
-import net.sgenette.springboottesting.library.model.Name;
+import net.sgenette.springboottesting.library.core.model.Author;
+import net.sgenette.springboottesting.library.core.model.Book;
+import net.sgenette.springboottesting.library.core.model.Isbn13;
+import net.sgenette.springboottesting.library.core.model.Name;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

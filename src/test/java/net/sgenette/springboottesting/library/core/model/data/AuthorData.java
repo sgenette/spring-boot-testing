@@ -1,7 +1,7 @@
-package net.sgenette.springboottesting.library.model.data;
+package net.sgenette.springboottesting.library.core.model.data;
 
-import net.sgenette.springboottesting.library.model.Author;
-import net.sgenette.springboottesting.library.model.Name;
+import net.sgenette.springboottesting.library.core.model.Author;
+import net.sgenette.springboottesting.library.core.model.Name;
 
 public final class AuthorData {
 

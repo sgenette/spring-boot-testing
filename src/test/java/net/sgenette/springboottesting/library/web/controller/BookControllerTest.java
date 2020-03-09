@@ -1,11 +1,11 @@
-package net.sgenette.springboottesting.library.web;
+package net.sgenette.springboottesting.library.web.controller;
 
 import net.sgenette.springboottesting.library.mapper.BookDTOMapper;
 import net.sgenette.springboottesting.library.mapper.BookDTOMapperImpl;
 import net.sgenette.springboottesting.library.mapper.Isbn13Mapper;
 import net.sgenette.springboottesting.library.mapper.NameMapper;
-import net.sgenette.springboottesting.library.model.Book;
-import net.sgenette.springboottesting.library.service.BookService;
+import net.sgenette.springboottesting.library.core.model.Book;
+import net.sgenette.springboottesting.library.core.service.BookService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.ArrayList;
 import java.util.List;
 
-import static net.sgenette.springboottesting.library.model.data.BookData.CLEAN_CODE;
+import static net.sgenette.springboottesting.library.core.model.data.BookData.CLEAN_CODE;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.Mockito.when;
