@@ -1,11 +1,9 @@
 package net.sgenette.springboottesting.library.mapper;
 
-import net.sgenette.springboottesting.library.model.Author;
-import net.sgenette.springboottesting.library.model.Book;
-import net.sgenette.springboottesting.library.model.Isbn13;
-import net.sgenette.springboottesting.library.model.Name;
-import net.sgenette.springboottesting.library.db.AuthorEntity;
 import net.sgenette.springboottesting.library.db.BookEntity;
+import net.sgenette.springboottesting.library.db.data.BookEntityData;
+import net.sgenette.springboottesting.library.model.Book;
+import net.sgenette.springboottesting.library.model.data.BookData;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,72 +19,36 @@ public class BookMapperTest {
 
     @Test
     public void book_shouldMapToBookEntity() {
-        Book book = Book.builder().
-                isbn13(new Isbn13("978 1 86197 876 9")).
-                title("Clean code").
-                author(Author.builder().
-                        firstName(new Name("Robert")).
-                        lastName(new Name("Martin")).
-                        build()).
-                build();
-
-        BookEntity actualBookEntity = mapper.bookToBookEntity(book);
+        BookEntity actualBookEntity = mapper.bookToBookEntity(BookData.CLEAN_CODE);
 
         assertAll(
-                () -> assertThat(actualBookEntity).isNotNull(),
-                () -> assertThat(actualBookEntity.getIsbn().toString()).
-                        isEqualTo(book.getIsbn13().getIsbn13()),
-                () -> assertThat(actualBookEntity.getTitle()).
-                        isEqualTo(book.getTitle()),
-                () -> assertThat(actualBookEntity.getAuthor().getFirstName()).
-                        isEqualTo(book.getAuthor().getFirstName().getName()),
-                () -> assertThat(actualBookEntity.getAuthor().getLastName()).
-                        isEqualTo(book.getAuthor().getLastName().getName())
-        );
+                () -> assertThat(actualBookEntity.getIsbn().toString()).isEqualTo("9781861978769"),
+                () -> assertThat(actualBookEntity.getTitle()).isEqualTo("Clean code"),
+                () -> assertThat(actualBookEntity.getAuthor().getFirstName()).isEqualTo("Robert"),
+                () -> assertThat(actualBookEntity.getAuthor().getLastName()).isEqualTo("Martin"));
     }
 
     @Test
     public void nullBook_shouldMapToNullBookEntity() {
-        Book book = null;
-
-        BookEntity actualBookEntity = mapper.bookToBookEntity(book);
+        BookEntity actualBookEntity = mapper.bookToBookEntity(null);
 
         assertThat(actualBookEntity).isNull();
     }
 
     @Test
     public void bookEntity_shouldMapToBook() {
-        BookEntity bookEntity = BookEntity.builder().
-                id(1L).
-                isbn(9781861978769L).
-                title("Clean code").
-                author(AuthorEntity.builder().
-                        id(1L).
-                        firstName("Robert").
-                        lastName("Martin").
-                        build()).
-                build();
-
-        Book actualBook = mapper.bookEntityToBook(bookEntity);
+        Book actualBook = mapper.bookEntityToBook(BookEntityData.CLEAN_CODE);
 
         assertAll(
-                () -> assertThat(actualBook).isNotNull(),
-                () -> assertThat(actualBook.getIsbn13().getIsbn13()).
-                        isEqualTo(bookEntity.getIsbn().toString()),
-                () -> assertThat(actualBook.getTitle()).
-                        isEqualTo(bookEntity.getTitle()),
-                () -> assertThat(actualBook.getAuthor().getFirstName().getName()).
-                        isEqualTo(bookEntity.getAuthor().getFirstName()),
-                () -> assertThat(actualBook.getAuthor().getLastName().getName()).
-                        isEqualTo(bookEntity.getAuthor().getLastName())
-        );
+                () -> assertThat(actualBook.getIsbn13().getIsbn13()).isEqualTo("9781861978769"),
+                () -> assertThat(actualBook.getTitle()).isEqualTo("Clean code"),
+                () -> assertThat(actualBook.getAuthor().getFirstName().getName()).isEqualTo("Robert"),
+                () -> assertThat(actualBook.getAuthor().getLastName().getName()).isEqualTo("Martin"));
     }
 
     @Test
     public void nullBookEntity_shouldMapToNullBook() {
-        BookEntity bookEntity = null;
-
-        Book actualBook = mapper.bookEntityToBook(bookEntity);
+        Book actualBook = mapper.bookEntityToBook(null);
 
         assertThat(actualBook).isNull();
     }

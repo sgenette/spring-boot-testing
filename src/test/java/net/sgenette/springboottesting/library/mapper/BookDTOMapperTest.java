@@ -20,10 +20,8 @@ public class BookDTOMapperTest {
         BookDTO actualBookDTO = mapper.bookToBookDTO(CLEAN_CODE);
 
         assertAll(
-                () -> assertThat(actualBookDTO).isNotNull(),
                 () -> assertThat(actualBookDTO.getIsbn()).isEqualTo("9781861978769"),
                 () -> assertThat(actualBookDTO.getTitle()).isEqualTo("Clean code"),
-                () -> assertThat(actualBookDTO.getAuthor()).isNotNull(),
                 () -> assertThat(actualBookDTO.getAuthor().getFirstName()).isEqualTo("Robert"),
                 () -> assertThat(actualBookDTO.getAuthor().getLastName()).isEqualTo("Martin"));
     }
